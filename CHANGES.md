@@ -1,5 +1,6 @@
 # Changes
 
+<<<<<<< HEAD
 ## cordova-sqlcipher-evplus-build-free 0.0.1-dev
 
 - SQLCipher support with evplus enhancements for Android
@@ -398,6 +399,11 @@
 ### cordova-sqlite-storage 1.4.7
 
 - Minor JavaScript fixes to pass @brodybits/Cordova-sql-test-app
+=======
+## cordova-sqlite-evcore-feature-android-db-location 0.7.2-dev1
+
+- Custom Android database file location
+>>>>>>> 51960fd338ebba3e38746557f2280fc5c6294000
 
 ## cordova-sqlite-evcore-common-free 0.7.1
 
