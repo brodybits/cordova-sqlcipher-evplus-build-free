@@ -2,9 +2,15 @@
 
 Native SQLCipher component with API based on HTML5/[Web SQL (DRAFT) API](http://www.w3.org/TR/webdatabase/) for the following platforms:
 - Android
+<<<<<<< HEAD
 - ~~iOS~~ - no encryption at this point
 - ~~macOS~~ ("osx" platform) - no encryption at this point
 - ~~Windows 10 (UWP) DESKTOP and MOBILE (see below for major limitations)~~ - no encryption at this point
+=======
+- iOS
+- macOS ("osx" platform)
+- Windows 10 (UWP) DESKTOP ~~and MOBILE~~ (see below for major limitations)
+>>>>>>> d8767058d58c641ddb76c20dc440170738214360
 
 <!-- [TBD] HIDE browser usage notes for now (at least):
 Browser platform is currently supported with some limitations as described in [browser platform usage notes](#browser-platform-usage-notes) section below, will be supported with more features such as numbered parameters and SQL batch API in the near future.
@@ -38,11 +44,18 @@ New SQLite plugin design with a simpler API is in progress with a working demo -
 
 ## Breaking changes coming soon
 
-in an upcoming major release - see [`xpbrew/cordova-sqlite-storage#922`](https://github.com/xpbrew/cordova-sqlite-storage/issues/922):
+in an upcoming major release - see [`xpbrew/cordova-sqlite-storage#922`](https://github.com/xpbrew/cordova-sqlite-storage/issues/922)
+
+some highlights:
 
 - drop support for Android pre-5.1, which will also be dropped by `cordova-android`, including deprecated `armeabi` target (superseded by `armeabi-v7a`, seems to be not supported by Android 5.0) - more info in [`xpbrew/cordova-sqlite-storage#922`](https://github.com/xpbrew/cordova-sqlite-storage/issues/922)
 - error `code` will always be `0` (which is already the case on Windows); actual SQLite3 error code will be part of the error `message` member whenever possible (see [`xpbrew/cordova-sqlite-storage#821`](https://github.com/xpbrew/cordova-sqlite-storage/issues/821))
 - drop support for location: 0-2 values in openDatabase call (please use `location: 'default'` or `iosDatabaseLocation` setting in openDatabase as documented below)
+- throw an exception in case of `androidDatabaseImplementation: 2` setting which is now superseded by `androidDatabaseProvider: 'system'` setting
+
+under consideration:
+
+- remove `androidLockWorkaround: 1` option if not needed any longer - [`xpbrew/cordova-sqlite-storage#925`](https://github.com/xpbrew/cordova-sqlite-storage/issues/925)
 
 ## About this plugin version
 
@@ -200,7 +213,11 @@ See the [Sample section](#sample) for a sample with a more detailed explanation 
 - This plugin version includes the following extra (non-standard) features, not supported for Android at this point:
   - BASE64 integrated from [brodybits / sqlite3-base64](https://github.com/brodybits/sqlite3-base64), using [brodybits / libb64-encode](https://github.com/brodybits/libb64-encode) (based on <http://libb64.sourceforge.net/> by Chris Venter, public domain)
   - REGEXP for Android (default Android-sqlite-connector database implementation), iOS, and macOS using [brodybits / sqlite3-regexp-cached](https://github.com/brodybits/sqlite3-regexp-cached) (based on <http://git.altlinux.org/people/at/packages/?p=sqlite3-pcre.git> by Alexey Tourbin, public domain)
+<<<<<<< HEAD
 - XXX TBD SQLite `3.32.3` included when building __iOS/macOS/Windows__, with the following compile-time definitions:
+=======
+- SQLite `3.32.3` included when building (all platforms), with the following compile-time definitions:
+>>>>>>> d8767058d58c641ddb76c20dc440170738214360
   - `SQLITE_THREADSAFE=1`
   - `SQLITE_DEFAULT_SYNCHRONOUS=3` (EXTRA DURABLE build setting) ref: [xpbrew/cordova-sqlite-storage#736](https://github.com/xpbrew/cordova-sqlite-storage/issues/736)
   - `SQLITE_LOCKING_STYLE=1` on iOS/macOS ONLY
@@ -236,6 +253,7 @@ See the [Sample section](#sample) for a sample with a more detailed explanation 
   - This plugin version branch has dependency on platform toolset libraries included by Visual Studio 2017 ref: [xpbrew/cordova-sqlite-storage#580](https://github.com/xpbrew/cordova-sqlite-storage/issues/580). Visual Studio 2015 is now supported by [`brodybits/cordova-sqlite-legacy`](https://github.com/brodybits/cordova-sqlite-legacy) (permissive license terms, no performance enhancements for Android) and [`brodybits/cordova-sqlite-evcore-legacy-ext-common-free`](https://github.com/brodybits/cordova-sqlite-evcore-legacy-ext-common-free) (GPL or commercial license terms, with performance enhancements for Android). UNTESTED workaround for Visual Studio 2015: it *may* be possible to support this plugin version on Visual Studio 2015 Update 3 by installing platform toolset v141.)
   - Visual Studio components needed: Universal Windows Platform development, C++ Universal Windows Platform tools. A recent version of Visual Studio 2017 will offer to install any missing feature components.
   - It is NOT possible to use this plugin with the default "Any CPU" target. A specific target CPU type MUST be specified when building an app with this plugin.
+  - ARM target CPU for Windows Mobile is no longer supported.
   - The `SQLite3-WinRT` component in `src/windows/SQLite3-WinRT-sync` is based on [doo/SQLite3-WinRT commit f4b06e6](https://github.com/doo/SQLite3-WinRT/commit/f4b06e6a772a2688ee0575a8034b55401ea64049) from 2012, which is missing the asynchronous C++ API improvements. There is no background processing on the Windows platform.
   - Truncation issue with UNICODE `\u0000` character (same as `\0`)
   - INCONSISTENT error code (0) and INCORRECT error message (missing actual error info) in error callbacks ref: [xpbrew/cordova-sqlite-storage#539](https://github.com/xpbrew/cordova-sqlite-storage/issues/539)
@@ -255,10 +273,14 @@ See the [Sample section](#sample) for a sample with a more detailed explanation 
 
 ## Announcements
 
+<<<<<<< HEAD
 - This plugin version branch includes premium improvements to the internal JSON interface between Javascript and native parts on Android, iOS, and macOS which improves the performance and resolves memory issues in case of some very large SQL batches and large SELECT results.
 - This plugin version includes additional JavaScript performance enhancements with special benefit for Android.
+=======
+- Custom Android database location (supports external storage directory)
+>>>>>>> d8767058d58c641ddb76c20dc440170738214360
 - This plugin version includes the following extra (non-standard) features: BASE 64 (all platforms Android/iOS/macOS/Windows), REGEXP (Android/iOS/macOS)
-- Using recent version of SQLite3 (`3.30.1`) with window functions and recent security updates:
+- _Using recent version of SQLite3 (...) with window functions and recent security updates:_
   - [xpbrew/cordova-sqlite-storage#895](https://github.com/xpbrew/cordova-sqlite-storage/issues/895)
   - [xpbrew/cordova-sqlite-storage#867](https://github.com/xpbrew/cordova-sqlite-storage/issues/867)
   - [xpbrew/cordova-sqlite-storage#837](https://github.com/xpbrew/cordova-sqlite-storage/issues/837)
@@ -853,6 +875,32 @@ where the `iosDatabaseLocation` option may be set to one of the following choice
 - `default`: `Library/LocalDatabase` subdirectory - *NOT* visible to iTunes and *NOT* backed up by iCloud
 - `Library`: `Library` subdirectory - backed up by iCloud, *NOT* visible to iTunes
 - `Documents`: `Documents` subdirectory - visible to iTunes and backed up by iCloud
+
+To specify a external or another custom Android database location, with help from cordova-plugin-file:
+
+```js
+window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(externalDataDirectoryEntry) {
+  var db = window.sqlitePlugin.openDatabase({name: 'external.db', androidDatabaseLocation: externalDataDirectoryEntry.toURL()});
+
+  db.transaction(function(tx) {
+    tx.executeSql('CREATE TABLE IF NOT EXISTS MyTable (data)');
+    tx.executeSql('INSERT INTO MyTable VALUES (?)', ['test-value']);
+  }, function(error) {
+    console.log('Populate database error: ' + error.message);
+
+  }, function() {
+    db.transaction(function(tx) {
+      tx.executeSql('SELECT data from MyTable', [], function(tx_ignored, resultSet) {
+        console.log('Record count: ' + resultSet.rows.length);
+        for (var i=0; i<resultSet.rows.length; ++i)
+          console.log('index: ' + i + ' value: ' + resultSet.rows.item(i).data);
+      });
+    }, function(error) {
+      console.log('Populate database error: ' + error.message);
+    });
+  });
+});
+```
 
 **WARNING:** Again, the new "default" iosDatabaseLocation value is *NOT* the same as the old default location and would break an upgrade for an app using the old default value (0) on iOS.
 

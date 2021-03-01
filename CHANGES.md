@@ -1,5 +1,6 @@
 # Changes
 
+<<<<<<< HEAD
 ## cordova-sqlcipher-evplus-build-free 0.0.1-dev
 
 - SQLCipher support with evplus enhancements for Android
@@ -9,6 +10,26 @@
 - SQLite 3.32.3 update from github:brodybits/cordova-sqlite-evplus-ext-free-dependencies#0.1.0-rc02
 
 ## cordova-plugin-sqlite-evplus-ext-common-free 0.4.0
+=======
+## cordova-sqlite-evcore-feature-android-db-location 0.8.0-pre1
+
+### cordova-sqlite-evcore-commoncore-free 0.3.0
+
+#### cordova-sqlite-storage-commoncore 2.0.0
+
+- Fix plugin param name for macOS ("osx") - *tested* with Cordova 9 and cordova-osx@5
+- Drop support for Windows on ARM (Windows Mobile)
+
+#### cordova-sqlite-storage 5.0.1
+
+- enable RENAME table with view test - from December 2019 SQLite crash report, fixed in 2020 ref:
+  - http://sqlite.1065341.n5.nabble.com/Crash-Bug-Report-tc109903.html
+  - https://github.com/xpbrew/cordova-sqlite-storage/issues/904
+
+### cordova-sqlite-evcore-commoncore-free 0.2.1
+
+- SQLite 3.32.3 update from cordova-sqlite-evcore-free-dependencies@0.9.3
+>>>>>>> d8767058d58c641ddb76c20dc440170738214360
 
 ### cordova-sqlite-evcore-commoncore-free 0.2.0
 
@@ -39,7 +60,7 @@
 
 #### cordova-sqlite-storage 3.4.1
 
-- SQLite 3.31.1 update from cordova-sqlite-storage-dependencies@2.1.1
+- SQLite 3.30.1 update from cordova-sqlite-storage-dependencies@2.1.1
 
 #### cordova-sqlite-storage 3.4.0
 
@@ -398,6 +419,12 @@
 ### cordova-sqlite-storage 1.4.7
 
 - Minor JavaScript fixes to pass @brodybits/Cordova-sql-test-app
+
+## cordova-sqlite-evcore-common-free 0.7.1
+
+## cordova-sqlite-evcore-feature-android-db-location 0.7.2-dev1
+
+- Custom Android database file location
 
 ## cordova-sqlite-evcore-common-free 0.7.1
 

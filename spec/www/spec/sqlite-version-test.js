@@ -104,6 +104,8 @@ var mytests = function() {
               expect(rs).toBeDefined();
               expect(rs.rows).toBeDefined();
               expect(rs.rows.length).toBe(1);
+              // XXX TBD ??? ???:
+              // expect(rs.rows.item(0).myResult).toBe('3.32.3');
               if (isAndroid)
                 expect(rs.rows.item(0).myResult).toBe('3.33.0');
               else
