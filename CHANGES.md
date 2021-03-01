@@ -1,6 +1,6 @@
 # Changes
 
-### cordova-sqlite-storage-commoncore 2.0.0-dev
+### cordova-sqlite-storage-commoncore 2.0.0
 
 - Fix plugin param name for macOS ("osx") - *tested* with Cordova 9 and cordova-osx@5
 - Drop support for Windows on ARM (Windows Mobile)
