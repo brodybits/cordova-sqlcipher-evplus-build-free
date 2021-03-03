@@ -1534,6 +1534,8 @@ var mytests = function() {
       describe(pluginScenarioList[i] + ': additional db.executeSql test(s)', function() {
 
         it(suiteName + 'PRAGMA & multiple database transaction combination test', function(done) {
+          pending('SKIP FOR NOW'); // XXX TBD ???
+
           var db1 = openDatabase('DB1');
           var db2 = openDatabase('DB2');
 
