@@ -108,7 +108,7 @@ describe('cipher (SQLCipher) encryption test(s)', function() {
         });
       });
 
-      it(suiteName + ' Open encrypted DB with another password - should not be able to read database', function (done) {
+      it(suiteName + ' Open encrypted DB with another password - should not be able to read database [TBD Android vs iOS/macOS]', function (done) {
         var dbName = "Encrypted-DB-reopen-with-another-password.db";
 
         openDatabase({name: dbName, key: 'test-password'}, function (db) {
@@ -119,6 +119,8 @@ describe('cipher (SQLCipher) encryption test(s)', function() {
             ], function() {
               db.close(function () {
                 openDatabase({name: dbName, key: "another-password"}, function (db) {
+                  // FUTURE TBD (...)
+                  if (!isAndroid) expect('Behavior changed update test').toBe('--');
                   // SHOULD NOT BE ABLE TO READ THE DATA
                   db.executeSql('SELECT * FROM tt', null, function(rs) {
                     // NOT EXPECTED:
@@ -132,8 +134,10 @@ describe('cipher (SQLCipher) encryption test(s)', function() {
 
                 }, function (error) {
                   // FUTURE TBD (...)
-                  expect('Behavior changed update test').toBe('--');
-                  done.fail();
+                  if (isAndroid) expect('Behavior changed update test').toBe('--');
+                  expect(error).toBeDefined();
+                  expect(error.message).toBeDefined();
+                  done();
                 });
               }, function (error) {
                 // NOT EXPECTED:

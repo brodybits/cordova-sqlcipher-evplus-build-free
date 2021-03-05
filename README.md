@@ -2,8 +2,8 @@
 
 Native SQLCipher component with API based on HTML5/[Web SQL (DRAFT) API](http://www.w3.org/TR/webdatabase/) for the following platforms:
 - Android
-- ~~iOS~~ - no encryption at this point
-- ~~macOS~~ ("osx" platform) - no encryption at this point
+- iOS
+- macOS
 - ~~Windows 10 (UWP) DESKTOP (...) (see below for major limitations)~~ - no encryption at this point
 
 <!-- [TBD] HIDE browser usage notes for now (at least):
@@ -203,6 +203,7 @@ See the [Sample section](#sample) for a sample with a more detailed explanation 
   - Cordova versions older than `6.0.0` are missing the `cordova-ios@4.0.0` security fixes.
 - SQLCipher version information:
   - SQLCipher `4.4.3` with OpenSSL 1.1.1j for Android: <https://github.com/brodybits/android-database-sqlcipher-evplus-ext-native-driver-build-free>
+  - SQLCipher `4.4.3` using the Apple Security framework for iOS and macOS ("osx")
 - This plugin version uses a `before_plugin_install` hook to fetch and install `cordova-sqlite-evplus-ext-free-dependencies` (with SQLite3 and Android-sqlite-evplus-ext-native-driver-free components) from GitHub.
 - Use of other systems such as Cordova Plugman, PhoneGap CLI, PhoneGap Build, and Intel XDK is no longer supported by this plugin version since they do not honor the `before_plugin_install` hook. The supported solution is to use [litehelpers / Cordova-sqlite-evcore-extbuild-free](https://github.com/litehelpers/Cordova-sqlite-evcore-extbuild-free) (GPL or commercial license terms); deprecated alternative with permissive license terms is available at: [brodybits / cordova-sqlite-legacy-build-support](https://github.com/brodybits/cordova-sqlite-legacy-build-support) (very limited testing, very limited updates).
 - This plugin version includes the following extra (non-standard) features:
