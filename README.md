@@ -12,7 +12,7 @@ Browser platform is currently supported with some limitations as described in [b
 
 This plugin version uses a special Android NDK sqlite database access library (C-language implementation), with some premium improvements to the internal JSON interface between the Javascript and native Android implementation, to provide significant performance and memory usage improvements on the Android platform.
 
-This plugin version is available under GPL v3 (<https://www.gnu.org/licenses/gpl-3.0.txt>) or commercial license options and includes components available under the MIT and Apache 2.0 licenses listed in [LICENSE.md](./LICENSE.md). Contact for commercial license: <sales@litehelpers.net>
+This plugin version is available under GPL v3 (<https://www.gnu.org/licenses/gpl-3.0.txt>) or commercial license options and includes components available under the MIT, BSD-style, and Apache 2.0 licenses listed in [LICENSE.md](./LICENSE.md). Contact for commercial license: <sales@litehelpers.net>
 
 **NOTICE:** Commercial licenses for [litehelpers / Cordova-sqlite-evcore-extbuild-free](https://github.com/litehelpers/Cordova-sqlite-evcore-extbuild-free) and [litehelpers / Cordova-sqlite-enterprise-free](https://github.com/litehelpers/Cordova-sqlite-enterprise-free) are **not** valid for this plugin version. For an upgrade please contact: <sales@litehelpers.net>
 
