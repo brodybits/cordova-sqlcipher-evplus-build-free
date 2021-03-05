@@ -3,8 +3,7 @@
 Native SQLCipher component with API based on HTML5/[Web SQL (DRAFT) API](http://www.w3.org/TR/webdatabase/) for the following platforms:
 - Android
 - iOS
-- macOS
-- ~~Windows 10 (UWP) DESKTOP (...) (see below for major limitations)~~ - no encryption at this point
+- ~~Windows 10 (UWP) DESKTOP (...) (see below for major limitations)~~ - __not enabled__ , no encryption at this point
 
 <!-- [TBD] HIDE browser usage notes for now (at least):
 Browser platform is currently supported with some limitations as described in [browser platform usage notes](#browser-platform-usage-notes) section below, will be supported with more features such as numbered parameters and SQL batch API in the near future.

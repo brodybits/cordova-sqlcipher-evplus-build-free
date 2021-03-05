@@ -2,6 +2,7 @@
 
 ## cordova-sqlcipher-evplus-ext-build-free 0.0.2-dev
 
+- fix!: disable this plugin on Windows
 - feat: SQLCipher support with evplus enhancements for iOS & macOS ("osx")
 
 ## cordova-sqlite-evplus-feat-android-db-location 0.0.2-dev
