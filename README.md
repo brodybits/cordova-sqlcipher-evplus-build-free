@@ -18,6 +18,7 @@ This plugin version is available under GPL v3 (<https://www.gnu.org/licenses/gpl
 
 ## WARNINGS
 
+- IMPORTANT EXPORT REQUIREMENTS ref: <https://github.com/brodybits/ask-me-anything/issues/20>
 - **Multiple SQLite corruption problem** - see section below & [`xpbrew/cordova-sqlite-storage#626`](https://github.com/xpbrew/cordova-sqlite-storage/issues/626)
 - **Breaking changes coming soon** - see section nearby & see [`xpbrew/cordova-sqlite-storage#922`](https://github.com/xpbrew/cordova-sqlite-storage/issues/922)
 
